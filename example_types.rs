@@ -18,6 +18,11 @@ struct ValueAndOffsetHolder {
     offset: i8,
 }
 
+// We need to give as input our implementations of the basic trait methods, plus any optimizations. 
+// Later we will get (as output from the traits file) access to a different trait that unifies all 
+// our cases and has fully fleshed-out, specialized methods. We can choose which provided base case 
+// we want to use for the methods of a given type, or we can choose to implement our own methods. 
+
 // The first struct only has basic functionality. 
 impl BasicHasTwoValues for TwoValueHolder {
     fn get_value_one(&self) -> i8 {
